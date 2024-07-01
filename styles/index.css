@@ -84,19 +84,26 @@ button:hover {
 }
 
 .notification {
-    width: 100%;
-    background-color: #f44336;
-    color: white;
-    text-align: center;
-    padding: 10px 20px;
-    position: fixed;
-    top: 50px;
-    left: 0;
-    z-index: 1000;
-    display: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .notification.show {
-    display: block;
+  display: block;
+}
+
+.notification.success {
+  background-color: #4CAF50;
+}
+
+.notification.error {
+  background-color: #f44336;
 }

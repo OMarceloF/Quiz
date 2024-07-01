@@ -253,9 +253,7 @@ function checkAnswer(selectedOption, correctAnswer) {
   if (selectedOption === correctAnswer) {
     correctAnswersCount++;
     updateScore();
-  } else {
-    showNotification('Resposta incorreta. A resposta correta é: ' + correctAnswer, 'error');
-  }
+  } 
   currentQuestionIndex++;
   nextQuestion();
 }

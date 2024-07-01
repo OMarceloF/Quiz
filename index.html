@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz | Curiosidades</title>
+  <link rel="stylesheet" href="./styles/index.css">
+</head>
+
+<body>
+  <div class="menu">
+    <h1>Círio de Nazeré</h1>
+    <p id="score">Respostas corretas: 0</p>
+    <p id="remaining">Jogadas: 0/7</p>
+  </div>
+  <div class="container" id="quiz-container">
+    <p id="question"></p>
+    <div id="options"></div>
+    <button onclick="nextQuestion()">Próxima</button>
+  </div>
+  <div class="container" id="result-container" style="display: none;">
+    <h2>Seu resultado</h2>
+    <p id="final-score"></p>
+    <button onclick="shareOnWhatsApp()">Compartilhar no WhatsApp</button>
+    <button onclick="restartQuiz()">Jogar Novamente</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

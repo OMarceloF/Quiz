@@ -254,9 +254,7 @@ function checkAnswer(selectedOption, correctAnswer) {
     showNotification('Resposta correta!', 'success');
     correctAnswersCount++;
     updateScore();
-  } else {
-    showNotification('Resposta incorreta. A resposta correta é: ' + correctAnswer, 'error');
-  }
+  } 
   currentQuestionIndex++;
   nextQuestion();
 }

@@ -251,7 +251,6 @@ function displayQuestion() {
 // Verificar a resposta selecionada pelo jogador
 function checkAnswer(selectedOption, correctAnswer) {
   if (selectedOption === correctAnswer) {
-    showNotification('Resposta correta!', 'success');
     correctAnswersCount++;
     updateScore();
   } else {

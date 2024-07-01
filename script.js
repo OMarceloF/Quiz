@@ -281,7 +281,7 @@ function showFinalResult() {
 
 // Função para compartilhar no WhatsApp
 function shareOnWhatsApp() {
-  const message = `Pontuei ${correctAnswersCount}/${numQuestionsToAsk} no jogo, venha jogar também: [link_do_site]`;
+  const message = `Pontuei ${correctAnswersCount}/${numQuestionsToAsk} no Quiz do Círio de Nazaré! Venha jogar também: [https://omarcelof.github.io/Quiz/]`;
   const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
   window.open(whatsappUrl, '_blank');
 }

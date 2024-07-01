@@ -208,7 +208,7 @@ let questions = [];
 let correctAnswersCount = 0;
 let currentQuestionIndex = 0;
 
-// Função para selecionar perguntas aleatórias
+// Selecionar perguntas aleatórias
 function selectRandomQuestions() {
   let tempQuestions = allQuestions.slice();
 
@@ -220,7 +220,7 @@ function selectRandomQuestions() {
   }
 }
 
-// Função para exibir a próxima pergunta
+// Exibir a próxima pergunta
 function nextQuestion() {
   if (currentQuestionIndex < questions.length) {
     displayQuestion();
@@ -229,7 +229,7 @@ function nextQuestion() {
   }
 }
 
-// Função para exibir a pergunta atual
+// Exibir a pergunta atual
 function displayQuestion() {
   const currentQuestion = questions[currentQuestionIndex];
   document.getElementById('question').textContent = currentQuestion.question;
@@ -248,45 +248,44 @@ function displayQuestion() {
   updateRemainingQuestions();
 }
 
-// Função para verificar a resposta selecionada pelo jogador
+// Verificar a resposta selecionada pelo jogador
 function checkAnswer(selectedOption, correctAnswer) {
   if (selectedOption === correctAnswer) {
-    alert('Resposta correta!');
+    showNotification('Resposta correta!', 'success');
     correctAnswersCount++;
     updateScore();
   } else {
-    alert('Resposta incorreta. A resposta correta é: ' + correctAnswer);
+    showNotification('Resposta incorreta. A resposta correta é: ' + correctAnswer, 'error');
   }
   currentQuestionIndex++;
-  // Chama a próxima pergunta após verificar a resposta
   nextQuestion();
 }
 
-// Função para atualizar o contador de respostas corretas
+// Atualizar o contador de respostas corretas
 function updateScore() {
   document.getElementById('score').textContent = 'Respostas corretas: ' + correctAnswersCount;
 }
 
-// Função para atualizar o contador de jogadas restantes
+// Atualizar o contador de jogadas restantes
 function updateRemainingQuestions() {
   document.getElementById('remaining').textContent = 'Jogadas: ' + currentQuestionIndex + '/' + numQuestionsToAsk;
 }
 
-// Função para mostrar o resultado final
+// Mostrar o resultado final
 function showFinalResult() {
   document.getElementById('quiz-container').style.display = 'none';
   document.getElementById('result-container').style.display = 'block';
   document.getElementById('final-score').textContent = 'Você pontuou ' + correctAnswersCount + '/' + numQuestionsToAsk;
 }
 
-// Função para compartilhar no WhatsApp
+// Compartilhar no WhatsApp
 function shareOnWhatsApp() {
   const message = `Pontuei ${correctAnswersCount}/${numQuestionsToAsk} no Quiz do Círio de Nazaré! Venha jogar também: [https://omarcelof.github.io/Quiz/]`;
   const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
   window.open(whatsappUrl, '_blank');
 }
 
-// Função para reiniciar o quiz
+// Reiniciar o quiz
 function restartQuiz() {
   correctAnswersCount = 0;
   currentQuestionIndex = 0;
@@ -299,6 +298,17 @@ function restartQuiz() {
   nextQuestion();
 }
 
-// Chama a função para selecionar perguntas aleatórias ao carregar a página
+// Mostrar uma notificação temporária
+function showNotification(message, type) {
+  const notification = document.getElementById('notification');
+  notification.textContent = message;
+  notification.className = 'notification ' + type + ' show';
+
+  setTimeout(() => {
+    notification.className = 'notification ' + type;
+  }, 3000);
+}
+
+// Chamando funções
 selectRandomQuestions();
 nextQuestion();

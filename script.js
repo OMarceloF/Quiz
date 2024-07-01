@@ -245,6 +245,10 @@ function displayQuestion() {
     optionsContainer.appendChild(button);
   });
 
+  if (currentQuestionIndex === 0) {
+    document.getElementById('next-button').style.display = 'none';
+  }
+
   updateRemainingQuestions();
 }
 
